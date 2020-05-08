@@ -66,7 +66,7 @@ subprojects {
     slice {
 
         // The home of ice
-        iceHome = 'd:\\DevTools\\Ice-3.7.3\\'
+        iceHome = 'c:\\Ice-3.7.3\\'
 
         java {
             files = [file("../slice/domain.ice")]

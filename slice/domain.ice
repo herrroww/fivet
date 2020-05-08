@@ -27,6 +27,80 @@
 module model {
 
     /**
+     *The Persona
+     */
+    class Persona{
+
+    /**
+     * PK
+     */
+     int id;
+
+    /**
+     * Rut: 815184009
+     */
+     string rut;
+
+    /**
+     * Nombre
+     */
+     string nombre;
+
+    /**
+     * Direccion
+     */
+     string direccion;
+
+    /**
+     * Telefono Fijo: +56 55 2355000
+     */
+     long telefonoFijo;
+
+    /**
+     * Telefono movil: +569 8123 1234
+     */
+     long telefonoMovil;
+
+    /**
+      * Correo electronico.
+      */
+     string email;
+    }
+
+    /**
+     * The Ficha.
+     */
+     class Ficha{
+
+    /**
+     * PK
+     */
+     int id;
+
+    /**
+     * Numero: 1554.
+     */
+     int numero;
+
+    /**
+     * Nombre: Firulay.
+     */
+     string nombre;
+
+    /**
+     * Especie: Canino.
+     */
+     string especie;
+
+     /**
+      * Fecha de Nacimiento.
+      * Format: ISO_ZONED_DATE_TIME
+      */
+      string fechaNacimiento;
+
+     }
+
+    /**
      * The base system.
      */
      interface TheSystem {
