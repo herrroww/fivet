@@ -26,90 +26,240 @@
 ["java:package:cl.ucn.disc.pdis.fivet.zeroice"]
 module model {
 
-    /**
-     *The Persona
-     */
-    class Persona{
+   /**
+    *The Persona
+    */
+   class Persona{
 
-    /**
-     * PK
-     */
-     int id;
+   /**
+    * PK
+    */
+   int id;
 
-    /**
-     * Rut: 815184009
-     */
-     string rut;
+   /**
+    * Rut: 815184009
+    */
+   string rut;
 
-    /**
-     * Nombre
-     */
-     string nombre;
+   /**
+    * Nombre
+    */
+   string nombre;
 
-    /**
-     * Direccion
-     */
-     string direccion;
+   /**
+    * Direccion
+    */
+   string direccion;
 
-    /**
-     * Telefono Fijo: +56 55 2355000
-     */
-     long telefonoFijo;
+   /**
+    * Telefono Fijo: +56 55 2355000
+    */
+   long telefonoFijo;
 
-    /**
-     * Telefono movil: +569 8123 1234
-     */
-     long telefonoMovil;
+   /**
+    * Telefono movil: +569 8123 1234
+    */
+   long telefonoMovil;
 
-    /**
-      * Correo electronico.
-      */
-     string email;
+   /**
+    * Correo electronico.
+    */
+   string email;
+
     }
 
-    /**
-     * The Ficha.
-     */
-     class Ficha{
+   /**
+    * The Sexo.
+    */
+   enum Sexo{
+       MACHO,
+       HEMBRA
+   }
 
-    /**
-     * PK
-     */
-     int id;
+   /**
+    * The Tipo of Paciente.
+    */
+   enum TipoPaciente{
+          INTERNO,
+          EXTERNO
+   }
 
-    /**
-     * Numero: 1554.
-     */
-     int numero;
+   /**
+    * The Ficha.
+    */
+   class Ficha{
 
-    /**
-     * Nombre: Firulay.
-     */
-     string nombre;
+   /**
+    * PK
+    */
+   int id;
 
-    /**
-     * Especie: Canino.
-     */
-     string especie;
+   /**
+    * Numero: 1554.
+    */
+   int numero;
 
-     /**
-      * Fecha de Nacimiento.
-      * Format: ISO_ZONED_DATE_TIME
-      */
-      string fechaNacimiento;
+   /**
+    * Nombre: Firulay.
+    */
+   string nombre;
 
-     }
+   /**
+    * Especie: Canino.
+    */
+   string especie;
 
-    /**
-     * The base system.
-     */
-     interface TheSystem {
+   /**
+    * Fecha de Nacimiento.
+    * Format: ISO_ZONED_DATE_TIME
+    */
+   string fechaNacimiento;
+
+   /**
+    * Raza: Rottweiler.
+    */
+   string raza;
+
+   /**
+    * Color: rojo.
+    */
+   string color;
+
+   /**
+    * Sexo: macho / hembra.
+    */
+   Sexo sexo;
+
+   /**
+    * TipoPaciente: interno/ externo.
+    */
+
+   TipoPaciente tipoPaciente;
+
+   }
+   /**
+    * The foto
+    */
+
+   class Foto{
+
+   /**
+    * id del examen
+    */
+   int id;
+
+   /*
+    * Url de la foto.
+    */
+   string urlFoto;
+   }
+
+   /**
+    * The control
+    */
+   class Control {
+
+   /**
+    * PK
+    */
+   int id;
+
+   /**
+    * Fecha del control
+    * Format: ISO_ZONED_DATE_TIME
+    */
+   string fechaControl;
+
+   /**
+    * Fecha Proximo Control , si aplica
+    * Format: ISO_ZONED_DATE_TIME
+    */
+   string fechaProximoControl;
+
+   /**
+    * Temperatura en C°
+    */
+   double temperatura;
+
+   /**
+    * Peso en kg
+    */
+   double peso;
+
+   /**
+    * Altura en cm
+    */
+   double altura;
+
+   /**
+    * Diagnostico
+    */
+   string diagnostico;
+
+   /**
+    * Veterinario , nombre del veterinario que realizó el control
+    */
+   string nombreVeterinario;
+   }
+
+   /**
+    * The Examen
+    */
+   class Examen{
+
+   /**
+    * PK
+    */
+   int id;
+
+   /**
+    * Nombre del examen: Radiología
+    */
+   string nombreExamen;
+
+   /**
+    * Fecha en que fue tomado el examen : 15/07/2019
+    * Format: ISO_ZONED_DATE_TIME
+    */
+   string fechaExamen;
+   }
+
+   /**
+    * The Contratos
+    */
+   interface Contratos {
+   /**
+    * Dado un numero de ficha, retorna la ficha asociada
+    * @param numero de la ficha a obtener.
+    * @return the Ficha.
+    */
+   Ficha obtenerFicha(int numero);
+   Ficha ingresarFicha(Ficha ficha);
+   Persona ingresarDuenio(Persona persona);
+   Control ingresarControl(Control control);
+   bool agregarFoto (Foto foto);
+
+
+
+
+
+
+
+   //TODO: escribir toda las operaciones del sistema
+   }
+
+
+
+   /**
+    * The base system.
+    */
+   interface TheSystem {
 
         /**
          * @return the diference in time between client and server.
          */
         long getDelay(long clientTime);
 
-     }
+   }
 
 }
