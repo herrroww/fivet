@@ -32,7 +32,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Server implementation.
  *
- * @author Diego Urrutia-Astorga.
+ * @author Martin Osorio-Buegueño.
  */
 @SuppressWarnings("UtilityClass")
 public final class SystemServer {

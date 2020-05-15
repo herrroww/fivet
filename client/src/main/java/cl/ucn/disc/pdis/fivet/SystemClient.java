@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Implementacion del cliente.
  *
- * @author Diego Urrutia-Astorga.
+ * @author Martin Osorio-Bugueño.
  */
 @SuppressWarnings({"UtilityClass", "LawOfDemeter"})
 public final class SystemClient {

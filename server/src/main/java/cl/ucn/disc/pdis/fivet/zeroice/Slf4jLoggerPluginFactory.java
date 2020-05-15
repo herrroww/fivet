@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Implementacion del logger.
  *
- * @author Diego Urrutia-Astorga.
+ * @author Martin Osorio-Bugueño.
  */
 public final class Slf4jLoggerPluginFactory implements PluginFactory {
 
