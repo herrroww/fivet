@@ -228,24 +228,53 @@ module model {
     * The Contratos
     */
    interface Contratos {
+   
    /**
     * Dado un numero de ficha, retorna la ficha asociada
     * @param numero de la ficha a obtener.
     * @return the Ficha.
     */
    Ficha obtenerFicha(int numero);
-   Ficha ingresarFicha(Ficha ficha);
-   Persona ingresarDuenio(Persona persona);
-   Control ingresarControl(Control control);
-   bool agregarFoto (Foto foto);
 
+   /**
+    * Deseo registrar los datos de un paciente.
+    *
+    * @param ficha a crear en el backend.
+    * @return the ficha almacenada en el backend (con numero asignado).
+    */
+    Ficha crearFicha(Ficha ficha);
 
+    /**
+    * Deseo registrar los datos del duenio de un paciente.
+    *
+    * @param persona a crear en el backend.
+    * @return the Persona almacenada en el backend.
+    */
+    Persona crearPersona(Persona persona);
 
+    /**
+     * Deseo registrar los datos de un Control.
+     *
+     * @param numeroFicha al cual sera asignado el control.
+     * @param control a agregar.
+     */
+        Control crearControl(int numeroFicha, Control control);
 
+    /**
+     * Dado un numero de ficha, retorna la ficha asociada.
+     *
+     * @param numero de la ficha a obtener.
+     * @return the Ficha.
+     */
+     Ficha obtenerFicha(int numero);
 
-
-
-   //TODO: escribir toda las operaciones del sistema
+    /**
+     * Dado un numero de rut obtiene la persona.
+     *
+     * @param rut de la persona a buscar.
+     * @return the Persona.
+     */
+     Persona obtenerPersona(string rut);
    }
 
 
